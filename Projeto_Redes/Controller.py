@@ -39,7 +39,7 @@ while(True):
     except:
         print("Erro na comunicação. Enviando Atuador para o estado seguro.")
         angle = pack('f', safeAngle)
-        UDPSocketServer.sendto(angle, ActuatorAddressPort)
+        UDPSocketServer.sendto(angle, (serverIP, dynamixelPort))
         sleep(1)
 
 
